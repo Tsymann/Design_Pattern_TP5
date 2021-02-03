@@ -8,15 +8,10 @@ public class BuyStock implements Command{
 		this.stock = stock;
 	}
 
-	public Stock getStock() {
-		return stock;
-	}
-
-
 	public boolean execute() throws CloneNotSupportedException {
 		for(Stock stock : this.stock.getGlobalStock().getStocks()) {
 			if(stock.getName().equals(this.stock.getName())) {
-				stock.setQuantity((stock.getQuantity() + this.stock.getQuantity()));
+				stock.setQuantity(stock.getQuantity() + this.stock.getQuantity());
 				System.out.println(this.toString());
 			}
 		}

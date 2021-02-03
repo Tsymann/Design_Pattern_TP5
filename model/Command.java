@@ -4,6 +4,4 @@ public interface Command {
 
 	  public abstract boolean execute() throws CloneNotSupportedException;
 	  
-	  public Stock getStock();
-
 }

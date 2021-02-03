@@ -49,19 +49,16 @@ public class CommandTp1 {
 	  
 	  System.out.println("\n");
 
-	  Stock stock1 = new Stock("myItem", 20, globalStock);
-	  BuyStock buyStock1 = new BuyStock(stock1);
-	  SellStock sellStock1 = new SellStock(stock1);
+	  BuyStock buyStock1 = new BuyStock(new Stock("myItem", 20, globalStock));
+	  SellStock sellStock1 = new SellStock(new Stock("myItem", 20, globalStock));
 	  globalStock.executeCommand(buyStock1);
 	  globalStock.executeCommand(sellStock1);
 	  
-	  Stock stock2 = new Stock("apple", 4, globalStock);
-	  SellStock sellStock2 = new SellStock(stock2);
+	  SellStock sellStock2 = new SellStock(new Stock("apple", 4, globalStock));
 	  globalStock.executeCommand(sellStock2);
 
-	  Stock stock3 = new Stock("pinapple", 7, globalStock);
-	  BuyStock BuyStock3 = new BuyStock(stock3);
-	  globalStock.executeCommand(BuyStock3);
+	  BuyStock BuyStock2 = new BuyStock(new Stock("pinapple", 7, globalStock));
+	  globalStock.executeCommand(BuyStock2);
 
 	  System.out.println("\n");
 	  
