@@ -12,9 +12,9 @@ public class Stock {
 		this.globalStock = new GlobalStock();
 	}
 	
-	public Stock(String nom, int quantité, GlobalStock globalStock) {
+	public Stock(String nom, int quantitÃ©, GlobalStock globalStock) {
 		this.name = nom;
-		this.quantity = quantité;
+		this.quantity = quantitÃ©;
 		this.globalStock = globalStock;
 	}
 

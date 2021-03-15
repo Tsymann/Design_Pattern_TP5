@@ -34,4 +34,21 @@ public class GlobalStock {
 		}
 	}
 
+	public void undo() throws CloneNotSupportedException {
+		if (!this.invoker.isEmpty()) {
+			Command lastCommand = this.invoker.pop();
+			if (lastCommand instanceof BuyStock) {
+				SellStock sellStock = new SellStock(
+						new Stock(lastCommand.getStock().getName(), lastCommand.getStock().getQuantity(), this));
+				sellStock.executeUndo();
+			} else if (lastCommand instanceof SellStock) {
+				BuyStock buyStock = new BuyStock(
+						new Stock(lastCommand.getStock().getName(), lastCommand.getStock().getQuantity(), this));
+				buyStock.executeUndo();
+			}
+			System.out.println("undo éffectué");
+		} else {
+			System.out.println("undo impossible");
+		}
+	}
 }
